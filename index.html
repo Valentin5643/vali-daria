@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Prima lună a lui Vali și Daria, în poze și momente mici.">
     <title>Vali & Daria - prima lună</title>
-    <link rel="stylesheet" href="styles.css?v=20260704-mobile-photo">
-    <script src="script.js?v=20260704-mobile-photo" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;650;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260704-scrapbook-deploy">
+    <script src="script.js?v=20260704-scrapbook-deploy" defer></script>
   </head>
   <body>
     <div class="loading-screen" data-loading>
@@ -24,16 +27,17 @@
         <nav class="top-nav" aria-label="Navigație principală">
           <a class="brand" href="#acasa">V &amp; D</a>
           <div class="nav-links">
-            <a href="#acasa">Acasă</a>
-            <a href="#album">Album</a>
-            <a href="#inside-jokes">Glume</a>
-            <a href="#planuri">Planuri</a>
+            <a href="#acasa" data-nav-link>Acasă</a>
+            <a href="#album" data-nav-link>Album</a>
+            <a href="#inside-jokes" data-nav-link>Glume</a>
+            <a href="#planuri" data-nav-link>Planuri</a>
           </div>
         </nav>
 
         <section class="hero hero-public" aria-labelledby="hero-title">
           <div class="hero-copy">
             <p class="eyebrow">Vali &amp; Daria - prima lună</p>
+            <span class="title-heart" aria-hidden="true">♡</span>
             <h1 id="hero-title">Prima noastră lună.</h1>
             <p class="hero-subtitle">Câteva poze, glume mici și momente care au rămas frumoase.</p>
             <p>Am strâns aici bucăți din începutul nostru: ieșiri, râsete, planuri și poze pe care o să le ținem minte cu drag.</p>
@@ -43,6 +47,8 @@
           </div>
           <figure class="hero-photo">
             <img src="imagini/WhatsApp Image 2026-07-02 at 21.44.04 (4).jpeg" alt="Vali și Daria într-o poză calmă împreună">
+            <span class="paper-piece paper-piece-rose" aria-hidden="true"></span>
+            <span class="paper-piece paper-piece-green" aria-hidden="true"></span>
           </figure>
         </section>
       </header>
