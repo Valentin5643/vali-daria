@@ -193,13 +193,16 @@ body.public-mode .joke-card:not([data-public-joke]) {
   display: inline-grid;
   place-items: center;
   min-width: 48px;
+  flex: 0 0 auto;
   height: 40px;
+  padding: 0 11px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.72);
   color: var(--rose-dark);
   font-family: var(--serif);
   font-weight: 700;
+  white-space: nowrap;
   box-shadow: var(--soft-shadow);
 }
 
@@ -207,6 +210,7 @@ body.public-mode .joke-card:not([data-public-joke]) {
   display: flex;
   gap: 6px;
   align-items: center;
+  min-width: 0;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scrollbar-width: none;
@@ -981,10 +985,10 @@ body.public-mode .joke-card:not([data-public-joke]) {
   }
 
   .hero-photo img {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
     max-height: 520px;
-    object-fit: cover;
-    object-position: center 42%;
+    object-fit: contain;
+    object-position: center;
     background: var(--surface);
   }
 
@@ -1008,6 +1012,7 @@ body.public-mode .joke-card:not([data-public-joke]) {
 
 @media (max-width: 620px) {
   .top-nav {
+    gap: 8px;
     width: calc(100% - 20px);
   }
 
@@ -1016,13 +1021,22 @@ body.public-mode .joke-card:not([data-public-joke]) {
   }
 
   .brand {
-    min-width: 42px;
-    height: 38px;
+    min-width: 0;
+    height: 36px;
+    padding: 0 10px;
+    font-size: 0.96rem;
+  }
+
+  .nav-links {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    max-width: none;
+    mask-image: none;
   }
 
   .nav-links a {
-    padding: 8px;
-    font-size: 0.84rem;
+    padding: 7px 6px;
+    font-size: 0.78rem;
   }
 
   .hero,
@@ -1030,17 +1044,41 @@ body.public-mode .joke-card:not([data-public-joke]) {
     width: calc(100% - 20px);
   }
 
+  .hero {
+    gap: 18px;
+    padding-top: 24px;
+    padding-bottom: 54px;
+  }
+
+  .hero::after {
+    bottom: 26px;
+  }
+
+  .hero-copy {
+    max-width: 34rem;
+  }
+
   .hero h1 {
-    font-size: clamp(2.48rem, 13vw, 3.05rem);
+    font-size: clamp(2.28rem, 11.5vw, 2.85rem);
   }
 
   .hero-public h1 {
-    font-size: clamp(1.82rem, 9.2vw, 2.18rem);
+    font-size: clamp(1.72rem, 8.6vw, 2.08rem);
+  }
+
+  .hero-subtitle {
+    margin: 14px 0 10px;
+    font-size: 1.06rem;
+  }
+
+  .hero-copy p:not(.eyebrow):not(.hero-subtitle) {
+    margin: 0;
+    font-size: 0.98rem;
   }
 
   .hero-public {
-    gap: 22px;
-    padding-top: 28px;
+    gap: 18px;
+    padding-top: 24px;
   }
 
   .hero-public .hero-subtitle {
@@ -1050,6 +1088,8 @@ body.public-mode .joke-card:not([data-public-joke]) {
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
   }
 
   .hero-actions .primary-button,
@@ -1061,16 +1101,41 @@ body.public-mode .joke-card:not([data-public-joke]) {
     padding: 26px 18px;
   }
 
+  .hero-photo img {
+    aspect-ratio: 4 / 5;
+    max-height: 380px;
+    border-width: 8px;
+    object-fit: contain;
+    object-position: center;
+  }
+
   .section {
-    padding: 56px 0;
+    padding: 44px 0;
+    scroll-margin-top: 74px;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .section h2 {
+    font-size: clamp(1.85rem, 10vw, 2.55rem);
+  }
+
+  .section-heading p:not(.eyebrow),
+  .section-ending {
+    font-size: 0.98rem;
   }
 
   .chapter {
+    gap: 14px;
+    margin: 18px 0;
     padding: 14px;
   }
 
   .chapter h3 {
-    font-size: clamp(1.55rem, 9vw, 2.2rem);
+    margin-bottom: 10px;
+    font-size: clamp(1.45rem, 8.4vw, 2rem);
   }
 
   .modal-backdrop {
@@ -1106,7 +1171,46 @@ body.public-mode .joke-card:not([data-public-joke]) {
   .memory-grid,
   .memory-wall,
   .unlock-grid {
+    gap: 14px;
     grid-template-columns: 1fr;
+  }
+
+  .photo-card h3,
+  .memory-card h3 {
+    margin-top: 14px;
+    font-size: 1.28rem;
+  }
+
+  .photo-card h3,
+  .photo-card p,
+  .memory-card h3,
+  .memory-card p {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .photo-card p,
+  .memory-card p {
+    margin-bottom: 16px;
+  }
+
+  .joke-list {
+    gap: 12px;
+  }
+
+  .joke-card {
+    min-height: 58px;
+    padding: 15px;
+  }
+
+  .checklist {
+    gap: 10px;
+  }
+
+  .checklist label,
+  .unlock-grid label {
+    min-height: 52px;
+    padding: 14px;
   }
 
   .memory-fab {
@@ -1141,7 +1245,8 @@ body.public-mode .joke-card:not([data-public-joke]) {
   }
 
   .closing-section {
-    font-size: 1.5rem;
+    padding-top: 40px;
+    font-size: 1.42rem;
   }
 }
 
